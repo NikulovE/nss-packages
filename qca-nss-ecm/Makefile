@@ -32,10 +32,9 @@ define KernelPackage/qca-nss-ecm
 		   +PACKAGE_kmod-bonding:kmod-bonding \
 		   +PACKAGE_kmod-vxlan:kmod-vxlan \
 		   +PACKAGE_kmod-nat46:kmod-nat46 \
-		   +PACKAGE_kmod-pppoe:kmod-pppoe \
-		   +PACKAGE_kmod-pppoe:kmod-pptp \
-		   +PACKAGE_kmod-pppoe:kmod-pppol2tp \
-		   +@(PACKAGE_kmod-pppoe):NSS_DRV_PPPOE_ENABLE
+		   +PACKAGE_kmod-pppol2tp:kmod-pppol2tp \
+		   +PACKAGE_kmod-pppol2tp:kmod-ppp \
+		   +@(PACKAGE_kmod-pppol2tp):NSS_DRV_L2TP_ENABLE
   TITLE:=QCA NSS Enhanced Connection Manager (ECM)
   FILES:=$(PKG_BUILD_DIR)/ecm.ko
   KCONFIG:=CONFIG_BRIDGE_NETFILTER=y \
