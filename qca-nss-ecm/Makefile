@@ -193,4 +193,5 @@ define Build/Compile
 		modules
 endef
 
+EXTRA_CFLAGS += $(patsubst %=-y,-D%,$(filter %=-y,$(ECM_MAKE_OPTS)))
 $(eval $(call KernelPackage,qca-nss-ecm))
