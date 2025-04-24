@@ -138,7 +138,6 @@ endif
 
 ifneq ($(CONFIG_PACKAGE_kmod-pppol2tp),)
 ECM_MAKE_OPTS+=ECM_INTERFACE_L2TPV2_ENABLE=y
-EXTRA_CFLAGS+=-DECM_INTERFACE_L2TPV2_ENABLE
 else
 ECM_MAKE_OPTS+=ECM_INTERFACE_L2TPV2_ENABLE=n
 endif
@@ -193,5 +192,4 @@ define Build/Compile
 		modules
 endef
 
-EXTRA_CFLAGS += $(patsubst %=-y,-D%,$(filter %=-y,$(ECM_MAKE_OPTS)))
 $(eval $(call KernelPackage,qca-nss-ecm))
